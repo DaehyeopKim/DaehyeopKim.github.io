@@ -187,6 +187,11 @@ latest_posts:
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   }
 
+  .publication-panel ol.bibliography video.preview {
+    background: #000;
+    object-fit: cover;
+  }
+
   .publication-panel ol.bibliography .title {
     margin-bottom: 0.55rem;
     color: var(--global-text-color);
@@ -427,6 +432,15 @@ latest_posts:
           panel.hidden = panel.id !== tab.getAttribute("aria-controls");
         });
       });
+    });
+
+    document.querySelectorAll(".publication-panel video.preview").forEach((video) => {
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.removeAttribute("controls");
+      video.play().catch(() => {});
     });
 
     Object.entries(titleLinks).forEach(([paperId, url]) => {
