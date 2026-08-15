@@ -6,7 +6,7 @@ subtitle: Undergraduate Researcher in Computer Graphics & Scientific ML @ Seoul 
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_dh_video.mp4
   image_circular: false
   more_info: >
     <p><a href="https://www.youngjoonhong.com/" target="_blank" rel="noopener noreferrer">SNU MLSC Lab</a></p>
@@ -48,6 +48,14 @@ latest_posts:
     max-width: 28%;
     margin-top: -1.8rem;
     margin-bottom: 0.2rem;
+  }
+
+  article > .profile video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
   }
 
   .home-sections {
