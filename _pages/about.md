@@ -27,103 +27,210 @@ latest_posts:
 ---
 
 <style>
+  :root {
+    --dh-ink: #1c1917;
+    --dh-muted: #78716c;
+    --dh-accent: #b45309;
+    --dh-line: #e7e5e4;
+    --dh-panel: #f5f5f4;
+    --global-theme-color: #b45309;
+  }
+
+  html[data-theme="dark"] {
+    --dh-ink: #f5f5f4;
+    --dh-muted: #a8a29e;
+    --dh-accent: #f59e0b;
+    --dh-line: #44403c;
+    --dh-panel: #292524;
+    --global-theme-color: #f59e0b;
+  }
+
   body.fixed-top-nav {
     padding-top: 0 !important;
   }
 
-  body > header {
-    display: none !important;
-  }
-
+  body > header,
   body > footer {
     display: none !important;
   }
 
+  .post {
+    color: var(--dh-ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  }
+
+  .post a {
+    color: var(--dh-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
   .post-header {
-    margin-bottom: 0.25rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--dh-line);
+  }
+
+  .post-title {
+    font-size: 2.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .post-header .desc {
+    margin-top: 0.45rem;
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
   }
 
   article > .profile {
-    width: 180px !important;
-    max-width: 28%;
-    margin-top: -1.8rem;
-    margin-bottom: 0.2rem;
+    width: 200px !important;
+    max-width: 32%;
+    margin-top: 0.15rem;
+    margin-bottom: 0.4rem;
   }
 
   article > .profile video {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border: 1px solid var(--dh-ink);
+    border-radius: 2px;
     object-fit: cover;
+  }
+
+  article > .profile .more-info {
+    margin-top: 0.55rem;
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  article > .profile .more-info p {
+    margin: 0;
   }
 
   .home-sections {
     clear: both;
-    margin-top: -1.45rem;
+    margin-top: 1.6rem;
     padding-top: 0;
   }
 
   .home-sections h2 {
-    margin-top: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.95rem;
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .home-sections h2::after {
+    content: "";
+    display: block;
+    width: 1.7rem;
+    height: 2px;
+    margin-top: 0.45rem;
+    background: var(--dh-accent);
   }
 
   .home-sections h2:first-child {
     margin-top: 0;
   }
 
-  .home-sections .news th::before {
-    content: "\2022";
-    display: inline-block;
-    margin-right: 0.45rem;
+  .home-sections .news table {
+    margin: 0;
+  }
+
+  .home-sections .news th {
+    width: 22%;
+    padding: 0.35rem 0.9rem 0.35rem 0;
+    border: 0;
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  .home-sections .news td {
+    padding: 0.35rem 0;
+    border: 0;
+    border-left: 1px solid var(--dh-line);
+    padding-left: 0.95rem;
   }
 
   .profile-links {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.92rem;
   }
 
   .profile-links a {
-    margin-right: 0.75rem;
+    margin-right: 0;
+    color: var(--dh-ink);
+    text-decoration: none;
+  }
+
+  .profile-links a + a::before {
+    content: "/";
+    margin: 0 0.55rem;
+    color: var(--dh-muted);
+  }
+
+  .profile-links a:hover {
+    color: var(--dh-accent);
   }
 
   .publication-toolbar {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-    margin: 0.35rem 0 1.15rem;
+    margin: 0 0 1.25rem;
   }
 
   .publication-note {
     margin: 0;
-    color: var(--global-text-color-light);
-    font-size: 0.95rem;
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.86rem;
   }
 
   .publication-toggle {
     display: inline-flex;
-    gap: 0.3rem;
+    gap: 1rem;
     margin: 0;
-    padding: 0.15rem;
-    border: 1px solid var(--global-divider-color);
-    border-radius: 8px;
-    background: var(--global-card-bg-color);
+    padding: 0;
+    border: 0;
+    background: transparent;
   }
 
   .publication-toggle button {
     border: 0;
-    border-radius: 6px;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
     background: transparent;
-    color: var(--global-text-color);
-    padding: 0.42rem 0.95rem;
+    color: var(--dh-muted);
+    padding: 0.15rem 0;
     cursor: pointer;
-    font-weight: 600;
-    line-height: 1.2;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
   .publication-toggle button[aria-selected="true"] {
-    background: var(--global-theme-color);
-    color: var(--global-bg-color);
+    background: transparent;
+    border-bottom-color: var(--dh-accent);
+    color: var(--dh-ink);
   }
 
   .publication-panel[hidden] {
@@ -140,8 +247,8 @@ latest_posts:
 
   .publication-panel ol.bibliography > li {
     margin-bottom: 0;
-    padding: 1.35rem 0;
-    border-top: 1px solid rgba(128, 128, 128, 0.22);
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--dh-line);
   }
 
   .publication-panel ol.bibliography > li:first-child {
@@ -155,8 +262,8 @@ latest_posts:
 
   .publication-panel ol.bibliography > li > .row {
     display: grid;
-    grid-template-columns: 210px minmax(0, 1fr);
-    gap: 1.35rem;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 1.5rem;
     align-items: start;
     margin: 0;
   }
@@ -179,25 +286,26 @@ latest_posts:
 
   .publication-panel ol.bibliography .preview {
     display: block;
-    width: 210px;
+    width: 220px;
     max-width: 100%;
     height: auto;
-    background: #fff;
-    border-radius: 8px !important;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    background: #111;
+    border: 1px solid var(--dh-ink);
+    border-radius: 0 !important;
+    box-shadow: none;
   }
 
   .publication-panel ol.bibliography video.preview {
-    background: #000;
     object-fit: cover;
   }
 
   .publication-panel ol.bibliography .title {
-    margin-bottom: 0.55rem;
-    color: var(--global-text-color);
-    font-size: 1.15rem;
-    font-weight: 700;
-    line-height: 1.25;
+    margin-bottom: 0.45rem;
+    color: var(--dh-ink);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
   }
 
   .publication-panel ol.bibliography .title a {
@@ -206,39 +314,41 @@ latest_posts:
   }
 
   .publication-panel ol.bibliography .title a:hover {
-    color: var(--global-theme-color);
+    color: var(--dh-accent);
   }
 
   .publication-panel ol.bibliography .author {
-    margin-bottom: 0.65rem;
-    color: var(--global-text-color-light);
-    font-size: 0.98rem;
-    line-height: 1.55;
+    margin-bottom: 0.45rem;
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .publication-panel ol.bibliography .author > em {
-    color: var(--global-text-color);
+    color: var(--dh-ink);
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     border-bottom: 0;
   }
 
   .publication-panel ol.bibliography .periodical {
-    margin-bottom: 0.7rem;
-    color: var(--global-text-color);
-    font-size: 1rem;
+    margin-bottom: 0.65rem;
+    color: var(--dh-ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.92rem;
   }
 
   .publication-panel ol.bibliography .periodical em {
-    font-style: normal;
-    font-weight: 700;
+    font-style: italic;
+    font-weight: 500;
   }
 
   .publication-panel ol.bibliography .links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: 0.7rem;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
   }
 
   .publication-panel ol.bibliography .links:empty {
@@ -247,18 +357,23 @@ latest_posts:
 
   .publication-panel ol.bibliography .links a.btn {
     margin: 0;
-    padding: 0.32rem 0.72rem;
+    padding: 0;
     border: 0;
-    border-radius: 999px;
-    background: rgba(128, 128, 128, 0.12);
-    color: var(--global-text-color);
-    font-size: 0.9rem;
-    font-weight: 600;
+    border-radius: 0;
+    background: transparent;
+    color: var(--dh-ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
   }
 
   .publication-panel ol.bibliography .links a.btn:hover {
-    background: var(--global-theme-color);
-    color: var(--global-bg-color);
+    background: transparent;
+    color: var(--dh-accent);
   }
 
   .publication-panel ol.bibliography .links a[href*="arxiv.org"] {
@@ -278,11 +393,13 @@ latest_posts:
   }
 
   .publication-tldr {
-    margin-top: 0.75rem;
-    padding-left: 0.75rem;
-    border-left: 3px solid var(--global-theme-color);
-    color: var(--global-text-color-light);
-    font-size: 0.95rem;
+    margin-top: 0.85rem;
+    padding: 0.7rem 0.85rem;
+    border: 0;
+    background: var(--dh-panel);
+    color: var(--dh-muted);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
     line-height: 1.55;
   }
 
@@ -291,8 +408,8 @@ latest_posts:
   }
 
   .publication-tldr-label {
-    color: var(--global-text-color);
-    font-weight: 700;
+    color: var(--dh-ink);
+    font-weight: 600;
   }
 
   .publication-tldr-more[hidden] {
@@ -304,40 +421,41 @@ latest_posts:
     padding: 0;
     border: 0;
     background: transparent;
-    color: var(--global-theme-color);
+    color: var(--dh-accent);
     cursor: pointer;
     font: inherit;
     font-weight: 600;
   }
 
+  .home-sections ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .home-sections li {
+    margin-bottom: 0.55rem;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+  }
+
   @media (max-width: 575.98px) {
-    article > .profile {
-      width: 145px !important;
-      max-width: 45%;
-      margin-top: 0;
+    .post-title {
+      font-size: 1.7rem;
     }
 
-    .post-header {
-      margin-bottom: 0.75rem;
+    article > .profile {
+      width: 150px !important;
+      max-width: 46%;
+      margin-top: 0;
     }
 
     .home-sections {
-      clear: both;
-      margin-top: 0;
-      padding-top: 0.55rem;
+      margin-top: 1.2rem;
     }
 
     .publication-toolbar {
       align-items: stretch;
       flex-direction: column;
-    }
-
-    .publication-toggle {
-      width: 100%;
-    }
-
-    .publication-toggle button {
-      flex: 1;
     }
 
     .publication-panel ol.bibliography > li > .row {
