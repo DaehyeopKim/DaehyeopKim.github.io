@@ -7,4 +7,4 @@ nav: false
 nav_order: 4
 ---
 
-- <img src="/assets/img/snu_logo.png" alt="SNU" height="18" style="vertical-align: text-bottom; margin-right: 0.35rem;"> **Seoul National University** — B.S. in Computer Science and Engineering and Mathematical Sciences
+- <img src="/assets/img/snu_logo.png" alt="SNU" height="18" style="vertical-align: text-bottom; margin-right: 0.35rem;"> **Seoul National University** — B.S. expected in Computer Science and Engineering and Mathematical Sciences (Feb 27)

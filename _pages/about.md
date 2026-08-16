@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Undergraduate Researcher in Computer Graphics & Scientific ML @ Seoul National University
+subtitle: Undergraduate Researcher in Machine Learning and Scientific Computing Lab @ Seoul National University
 
 profile:
   align: right
@@ -438,6 +438,58 @@ latest_posts:
     line-height: 1.55;
   }
 
+  .experience-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .experience-list li {
+    margin: 0 0 1.2rem;
+  }
+
+  .experience-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .experience-role {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.55rem;
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .experience-role img {
+    position: relative;
+    top: 0.12em;
+    height: 18px;
+    width: auto;
+  }
+
+  .experience-role strong {
+    font-weight: 600;
+  }
+
+  .experience-meta {
+    color: var(--dh-muted);
+  }
+
+  .experience-meta::before {
+    content: "—";
+    margin-right: 0.45rem;
+    color: var(--dh-line);
+  }
+
+  .experience-note {
+    margin: 0.3rem 0 0 1.7rem;
+    color: var(--dh-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.45;
+  }
+
   @media (max-width: 575.98px) {
     .post-title {
       font-size: 1.7rem;
@@ -471,15 +523,14 @@ latest_posts:
 </p>
 
 <p>
-  I work on Computer Graphics and Scientific Machine Learning,<br>
-  with a focus on PINNs, neural operators, and 3D Gaussian Splatting for accurate and efficient solution representation.
+  I work on Scientific Machine Learning with Computer Graphics,<br>
+  with a focus on PINNs.
 </p>
 
 <p class="profile-links">
   <a href="mailto:2012abcd@snu.ac.kr">Email</a>
   <a href="https://www.linkedin.com/in/daehyeop-kim-41536530a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   <a href="https://github.com/DaehyeopKim" target="_blank" rel="noopener noreferrer">GitHub</a>
-  <a href="https://orcid.org/0009-0002-9520-2280" target="_blank" rel="noopener noreferrer">ORCID</a>
 </p>
 
 <div class="home-sections">
