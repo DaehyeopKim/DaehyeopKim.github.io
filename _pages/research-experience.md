@@ -11,10 +11,10 @@ nav_order: 3
   <li>
     <p class="experience-role">
       <img src="/assets/img/snu_logo.png" alt="SNU" height="18">
-      <strong><a href="https://www.youngjoonhong.com/" target="_blank" rel="noopener noreferrer">MLSC Lab</a></strong>
+      <strong><a href="https://snu-mlsc.github.io/" target="_blank" rel="noopener noreferrer">MLSC Lab</a></strong>
       <span class="experience-meta">Undergraduate research intern, Seoul, Dec 2025–Present</span>
     </p>
-    <p class="experience-note">Building efficient and accurate AP PINNs for BGK equation</p>
+    <p class="experience-note">Developing Physics-Informed Neural Networks for solving BGK equation problems within multi physical regimes.</p>
   </li>
   <li>
     <p class="experience-role">

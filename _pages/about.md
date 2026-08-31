@@ -9,7 +9,7 @@ profile:
   image: profile_dh_video.mp4
   image_circular: false
   more_info: >
-    <p><a href="https://www.youngjoonhong.com/" target="_blank" rel="noopener noreferrer">SNU MLSC Lab</a></p>
+    <p><a href="https://snu-mlsc.github.io/" target="_blank" rel="noopener noreferrer">SNU MLSC Lab</a></p>
     <p>Seoul, South Korea</p>
 
 selected_papers: false
@@ -344,6 +344,13 @@ latest_posts:
     font-weight: 500;
   }
 
+  .publication-panel ol.bibliography .pub-demo {
+    margin-left: 0.35rem;
+    color: var(--dh-accent);
+    font-style: italic;
+    font-weight: 500;
+  }
+
   .publication-panel ol.bibliography .links {
     display: flex;
     flex-wrap: wrap;
@@ -625,6 +632,14 @@ latest_posts:
       });
     });
 
+    document.querySelectorAll(".publication-panel #hong2026diffbmp .title").forEach((title) => {
+      if (title.querySelector(".pub-demo")) return;
+      const demo = document.createElement("em");
+      demo.className = "pub-demo";
+      demo.textContent = "[Selected for Demonstration]";
+      title.append(" ", demo);
+    });
+
     const splitTldr = (text) => {
       const cleanText = text
         .replace(/\s+/g, " ")
@@ -698,6 +713,11 @@ latest_posts:
 
 {% assign research_experience_page = site.pages | where: "permalink", "/research-experience/" | first %}
 {{ research_experience_page.content | markdownify }}
+
+<h2 id="projects">Projects</h2>
+
+{% assign selected_projects_page = site.pages | where: "permalink", "/selected-projects/" | first %}
+{{ selected_projects_page.content | markdownify }}
 
 <h2 id="education">Education</h2>
 
