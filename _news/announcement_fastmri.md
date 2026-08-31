@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Placed 4th out of 186 teams in the 2026 SNU FastMRI Challenge.
+Placed 4th out of 186 teams in the [2026 SNU FastMRI Challenge](https://fastmri.snu.ac.kr/).
